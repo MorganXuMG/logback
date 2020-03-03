@@ -13,10 +13,11 @@ public class LogInterceptor extends HandlerInterceptorAdapter {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         String id = (String)request.getParameter("id");
+        String name = (String)request.getParameter("name");
         //MDC.put("id", id);
 
         DataContext.getContext().put("id", id);
-
+        DataContext.getContext().put("name", name);
         return true;
     }
 

@@ -2,6 +2,7 @@ package com.ccb.logback.demo.config;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class DataContext {
 
@@ -25,6 +26,10 @@ public class DataContext {
 
     public String get(String key) {
         return contextLocal.get().get(key);
+    }
+
+    public Set<Map.Entry<String, String>> getAll() {
+        return contextLocal.get().entrySet();
     }
 
     public String remove(String key) {

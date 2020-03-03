@@ -3,7 +3,7 @@
     <!--定义日志文件的存储地址 勿在 LogBack 的配置中使用相对路径-->
     <property name="LOG_HOME" value="/home" />
 
-    <conversionRule conversionWord="con" converterClass="com.ccb.logback.demo.config.MyConverter" ></conversionRule>
+    <conversionRule conversionWord="data" converterClass="com.ccb.logback.demo.config.DataConverter" ></conversionRule>
 
     <!-- 控制台输出 -->
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
@@ -13,7 +13,7 @@
             <!--<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level [%X{id}] %logger{50} - %msg%n</pattern>-->
 
             <!-- 2.自定义转换符 -->
-            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level [%con] %logger{50} - %msg%n</pattern>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level [%data{id}] [%data{name}] %logger{50} - %msg%n</pattern>
 
 
         </encoder>
